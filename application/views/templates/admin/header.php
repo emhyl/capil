@@ -18,6 +18,14 @@
         <!-- Timeline CSS -->
         <link href="<?= base_url() ?>/assets/admin//css/timeline.css" rel="stylesheet">
 
+        <?php if(!isset($footer)): ?>
+        <!-- DataTables CSS -->
+        <link href="<?= base_url('assets/admin/') ?>css/dataTables/dataTables.bootstrap.css" rel="stylesheet">
+
+        <!-- DataTables Responsive CSS -->
+        <link href="<?= base_url('assets/admin/') ?>css/dataTables/dataTables.responsive.css" rel="stylesheet">
+        <?php endif ?>
+
         <!-- Custom CSS -->
         <link href="<?= base_url() ?>/assets/admin//css/startmin.css" rel="stylesheet">
 

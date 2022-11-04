@@ -18,13 +18,19 @@
                     <a href="index.html" class="active"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                 </li>
                 <li>
-                    <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Charts<span class="fa arrow"></span></a>
+                    <a href="#"><i class="fa fa-table fa-fw"></i> Data Master<span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level">
                         <li>
-                            <a href="flot.html">Flot Charts</a>
+                            <a href="<?= base_url('admin/data_master/data_login') ?>">Data Login</a>
                         </li>
                         <li>
-                            <a href="morris.html">Morris.js Charts</a>
+                            <a href="<?= base_url('admin/data_master/data_pemohon') ?>">Data Pemohon</a>
+                        </li>
+                        <li>
+                            <a href="<?= base_url('admin/data_master/data_berkas') ?>">Data Berkas</a>
+                        </li>
+                        <li>
+                            <a href="<?= base_url('admin/data_master/data_antrian') ?>">Data Antrian</a>
                         </li>
                     </ul>
                     <!-- /.nav-second-level -->

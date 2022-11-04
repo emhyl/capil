@@ -5,7 +5,10 @@ class Login extends CI_Controller {
 
 	public function __construct(){
 		parent::__construct();
-		// $this->load->model('M_homecare');
+		if($this->session->userdata('admin')){
+			$this->session->sess_destroy();
+		}
+		// $this->load->model('M_capil');
 	}
 
 	public function index()
@@ -16,14 +19,14 @@ class Login extends CI_Controller {
 			$data['username'] = $this->input->post('username');
 			$data['password'] = $this->input->post('password');
 
-			$auth = $this->M_homecare->getWhere('tbl_login',$data);
-			// var_dump($auth);
-			// die();
+			$auth = $this->M_capil->getWhere('tbl_login',$data);
+	
 			if($auth){
 				switch ($auth->status) {
 					case 'admin':
 						$this->session->set_userdata('admin',true);
 						redirect(base_url('admin'));
+				
 						break;
 					case 'dokter':
 						# code...

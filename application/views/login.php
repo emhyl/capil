@@ -1,144 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8"/>
-  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
-  <meta name="description" content=""/>
-  <meta name="author" content=""/>
-  <title>Dashtreme Admin - Free Dashboard for Bootstrap 4 by Codervent</title>
-  <!-- loader-->
-  <link href="<?= base_url('assets/admin/') ?>css/pace.min.css" rel="stylesheet"/>
-  <script src="<?= base_url('assets/admin/') ?>js/pace.min.js"></script>
-  <!--favicon-->
-  <link rel="icon" href="<?= base_url('assets/admin/') ?>images/favicon.ico" type="image/x-icon">
-  <!-- Bootstrap core CSS-->
-  <link href="<?= base_url('assets/admin/') ?>css/bootstrap.min.css" rel="stylesheet"/>
-  <!-- animate CSS-->
-  <link href="<?= base_url('assets/admin/') ?>css/animate.css" rel="stylesheet" type="text/css"/>
-  <!-- Icons CSS-->
-  <link href="<?= base_url('assets/admin/') ?>css/icons.css" rel="stylesheet" type="text/css"/>
-  <!-- Custom Style-->
-  <link href="<?= base_url('assets/admin/') ?>css/app-style.css" rel="stylesheet"/>
-  
-</head>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="">
 
-<body class="bg-theme bg-theme1">
+        <title>Startmin - Bootstrap Admin Theme</title>
 
-<!-- start loader -->
-   <div id="pageloader-overlay" class="visible incoming"><div class="loader-wrapper-outer"><div class="loader-wrapper-inner" ><div class="loader"></div></div></div></div>
-   <!-- end loader -->
+        <!-- Bootstrap Core CSS -->
+        <link href="<?= base_url('assets/admin/') ?>css/bootstrap.min.css" rel="stylesheet">
 
-<!-- Start wrapper-->
- <div id="wrapper">
+        <!-- MetisMenu CSS -->
+        <link href="<?= base_url('assets/admin/') ?>css/metisMenu.min.css" rel="stylesheet">
 
- <div class="loader-wrapper"><div class="lds-ring"><div></div><div></div><div></div><div></div></div></div>
-	<div class="card card-authentication1 mx-auto my-5">
-		<div class="card-body">
-		 <div class="card-content p-2">
-		 	<div class="text-center">
-		 		<img src="<?= base_url('assets/admin/') ?>images/logo-icon.png" alt="logo icon">
-		 	</div>
-		  <div class="card-title text-uppercase text-center py-3">Sign In</div>
-        <?= $this->session->flashdata('err_login'); ?>
-		    <form action="<?= base_url('login') ?>" method="post">
-			  <div class="form-group">
-			  <label for="inputUsername" class="sr-only">Username</label>
-			   <div class="position-relative has-icon-right">
-				  <input type="text" id="inputUsername" required name="username" class="form-control input-shadow" placeholder="Masukkan username">
-				  <div class="form-control-position">
-					  <i class="icon-user"></i>
-				  </div>
-			   </div>
-			  </div>
-			  <div class="form-group">
-			  <label for="inputPassword" class="sr-only">Password</label>
-			   <div class="position-relative has-icon-right">
-				  <input type="password" id="inputPassword" required name="password" class="form-control input-shadow" placeholder="Masukkan Password">
-				  <div class="form-control-position">
-					  <i class="icon-lock"></i>
-				  </div>
-			   </div>
-			  </div>
-			<div class="form-row">
-			 <div class="form-group col-6">
-			   <div class="icheck-material-white">
-                <input type="checkbox" id="user-checkbox" checked="" />
-                <label for="user-checkbox">Ingat Saya</label>
-			  </div>
-			 </div>
-			<!--  <div class="form-group col-6 text-right">
-			  <a href="reset-password.html">Reset Password</a>
-			 </div> -->
-			</div>
-			 <button type="submit" name="btn_login" class="btn btn-light btn-block">Login</button>			  
-			 <div class="form-row mt-4">
-			
-		
-			</div>
-			 
-			 </form>
-		   </div>
-		  </div>
-		  <div class="card-footer text-center py-3">
-		    <p class="text-warning mb-0">Belum mendaftar ? <a href="register.html"> Daftar disini</a></p>
-		  </div>
-	     </div>
-    
-     <!--Start Back To Top Button-->
-    <a href="javaScript:void();" class="back-to-top"><i class="fa fa-angle-double-up"></i> </a>
-    <!--End Back To Top Button-->
-	
-	<!--start color switcher-->
-   <div class="right-sidebar">
-    <div class="switcher-icon">
-      <i class="zmdi zmdi-settings zmdi-hc-spin"></i>
-    </div>
-    <div class="right-sidebar-content">
+        <!-- Custom CSS -->
+        <link href="<?= base_url('assets/admin/') ?>css/startmin.css" rel="stylesheet">
 
-      <p class="mb-0">Gaussion Texture</p>
-      <hr>
-      
-      <ul class="switcher">
-        <li id="theme1"></li>
-        <li id="theme2"></li>
-        <li id="theme3"></li>
-        <li id="theme4"></li>
-        <li id="theme5"></li>
-        <li id="theme6"></li>
-      </ul>
+        <!-- Custom Fonts -->
+        <link href="<?= base_url('assets/admin/') ?>css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
-      <p class="mb-0">Gradient Background</p>
-      <hr>
-      
-      <ul class="switcher">
-        <li id="theme7"></li>
-        <li id="theme8"></li>
-        <li id="theme9"></li>
-        <li id="theme10"></li>
-        <li id="theme11"></li>
-        <li id="theme12"></li>
-		<li id="theme13"></li>
-        <li id="theme14"></li>
-        <li id="theme15"></li>
-      </ul>
-      
-     </div>
-   </div>
-  <!--end color switcher-->
-	
-	</div><!--wrapper-->
-	
-  <!-- Bootstrap core JavaScript-->
-  <script src="<?= base_url('assets/admin/') ?>js/jquery.min.js"></script>
-  <script src="<?= base_url('assets/admin/') ?>js/popper.min.js"></script>
-  <script src="<?= base_url('assets/admin/') ?>js/bootstrap.min.js"></script>
-	
-  <!-- sidebar-menu js -->
-  <script src="<?= base_url('assets/admin/') ?>js/sidebar-menu.js"></script>
-  
-  <!-- Custom scripts -->
-  <script src="<?= base_url('assets/admin/') ?>js/app-script.js"></script>
-  
-</body>
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+    </head>
+    <body>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 col-md-offset-4">
+                    <div class="login-panel panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Please Sign In</h3>
+                        </div>
+                        <div class="panel-body">
+                            <form role="form" action="<?= base_url('login')?>" method="post">
+                                <fieldset>
+                                    <div class="form-group">
+                                        <input class="form-control" placeholder="Username" name="username" type="text" autofocus>
+                                    </div>
+                                    <div class="form-group">
+                                        <input class="form-control" placeholder="Password" name="password" type="password" value="">
+                                    </div>
+                                    <div class="checkbox">
+                                        <label>
+                                            <input name="remember" type="checkbox" value="Remember Me">Remember Me
+                                        </label>
+                                    </div>
+                                    <!-- Change this to a button or input when using this as a form -->
+                                    <button type="submit" name="btn_login" class="btn btn-lg btn-success btn-block">Login</button>
+                                </fieldset>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- jQuery -->
+        <script src="<?= base_url('assets/admin/') ?>js/jquery.min.js"></script>
+
+        <!-- Bootstrap Core JavaScript -->
+        <script src="<?= base_url('assets/admin/') ?>js/bootstrap.min.js"></script>
+
+        <!-- Metis Menu Plugin JavaScript -->
+        <script src="<?= base_url('assets/admin/') ?>js/metisMenu.min.js"></script>
+
+        <!-- Custom Theme JavaScript -->
+        <script src="<?= base_url('assets/admin/') ?>js/startmin.js"></script>
+
+    </body>
 </html>

@@ -1,5 +1,5 @@
 <?php
-    class M_homecare extends CI_Model
+    class M_capil extends CI_Model
     {
 
 
