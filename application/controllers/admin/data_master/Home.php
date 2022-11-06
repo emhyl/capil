@@ -33,12 +33,26 @@ class Home extends CI_Controller {
 			$tbl_name = 'tbl_pemohon';
 			$this->session->set_flashdata('tbl_name',$tbl_name);
 			$this->session->set_flashdata('tbl_name_lbl',$tbl_name_url);
+			$options['field']['no_antrian'] = [
+				'use' => false,
+				];
 			break;
 
 			case 'data_berkas':
 			$tbl_name = 'tbl_berkas';
 			$this->session->set_flashdata('tbl_name',$tbl_name);
 			$this->session->set_flashdata('tbl_name_lbl',$tbl_name_url);
+			$options['field']['jenis_pengurusan']['tag'] = [
+				'select' => true,
+				'data' => ['KTP','KK']
+			];
+			$options['field']['status']['tag'] = [
+				'select' => true,
+				'data' => ['antri','proses','selesai']
+			];
+			$options['field']['tgl'] = [
+				'type' => 'date',
+			];
 			break;
 			
 			case 'data_user':

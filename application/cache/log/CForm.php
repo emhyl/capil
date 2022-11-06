@@ -2,6 +2,9 @@
 
 class CForm extends CI_Model{
 
+	public function time_now(){
+		date_default_timezone_set('Asia/Makassar');
+	}
 
 
 	public function form_input($data,$options = []){
