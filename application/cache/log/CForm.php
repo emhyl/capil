@@ -2,8 +2,13 @@
 
 class CForm extends CI_Model{
 
-	public function time_now(){
+	public function time_now($jam = false){
 		date_default_timezone_set('Asia/Makassar');
+		if(!$jam){
+			return date('Y-m-d');
+		}else{
+			return date('H');
+		}
 	}
 
 

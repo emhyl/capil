@@ -12,26 +12,27 @@ class Pemohon extends CI_Controller {
 	public function index()
 	{
 		$data['pemohon'] = $this->M_capil->join2tbl('*',['tbl_pemohon','tbl_berkas'],['id','id_pemohon'],['status'=>'proses']);
+		$data['total_proses'] = count($this->M_capil->getAllWhere('tbl_berkas',['status'=>'proses']));
 		
-		// var_dump($data['pemohon']);die();
-
-		$this->load->view('templates/admin/header');
+		$this->load->view('templates/admin/header',['notif'=>$data['total_proses']]);
 		$this->load->view('templates/admin/sidebar');
 		$this->load->view('admin/pemohon',$data);
 		$this->load->view('templates/admin/footer');
 	}
 
 	public function konfirmasi($id=null){
+		$jml_antrian = count($this->M_capil->getAll('tbl_antrian'));
 		$berkas = $this->M_capil->getWhere('tbl_berkas',['id'=>$id]);
 		if(!is_null($id) && $berkas){
 			$this->M_capil->edit('tbl_berkas',['status'=>'antri'],['id'=>$id]);
-			if( count($this->M_capil->getAll('tbl_antrian'))==0 ){
+			if( $jml_antrian == 0 ){
 				$this->M_capil->edit('tbl_pemohon',['no_antrian'=>1],['id'=>$berkas->id_pemohon]);
 				$this->M_capil->add('tbl_antrian',['id_pemohon'=>$berkas->id_pemohon,'status'=>'proses']);
 			}else{
 				$id_prev = $this->M_capil->getLast('tbl_antrian')->id_pemohon;
 				$no_next = $this->M_capil->getWhere('tbl_pemohon',['id'=>$id_prev])->no_antrian + 1;
 				$this->M_capil->edit('tbl_pemohon',['no_antrian'=>$no_next],['id'=>$berkas->id_pemohon]);
+				
 				$this->M_capil->add('tbl_antrian',['id_pemohon'=>$berkas->id_pemohon,'status'=>'antri']);
 			}
 			redirect(base_url('admin/pemohon'));

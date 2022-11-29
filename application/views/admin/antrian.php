@@ -31,7 +31,7 @@
             <div class="col-lg-12">
                 <div class="jumbotron">
                     <h1>Belum Ada antrian</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tincidunt est vitae ultrices accumsan. Aliquam ornare lacus adipiscing, posuere lectus et, fringilla augue. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tincidunt est vitae ultrices accumsan. Aliquam ornare lacus adipiscing.</p>
+                    <p></p>
                     <!-- <p><a class="btn btn-primary btn-lg" role="button">Learn more</a> -->
                     </p>
                 </div>
@@ -77,8 +77,8 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="jumbotron">
-                    <h1>Belum Ada pemohon</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tincidunt est vitae ultrices accumsan. Aliquam ornare lacus adipiscing, posuere lectus et, fringilla augue. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tincidunt est vitae ultrices accumsan. Aliquam ornare lacus adipiscing.</p>
+                    <h1>Belum Ada Daftar Antrian</h1>
+                    <p></p>
                     <!-- <p><a class="btn btn-primary btn-lg" role="button">Learn more</a> -->
                     </p>
                 </div>

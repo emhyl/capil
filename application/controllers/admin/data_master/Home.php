@@ -2,9 +2,10 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Home extends CI_Controller {
-
+	private $notif; 
 	public function __construct(){
 		parent::__construct();
+		$this->notif = count($this->M_capil->getAllWhere('tbl_berkas',['status'=>'proses']));
 	}
 
 	public function index($tbl_name_url = null)
@@ -74,7 +75,7 @@ class Home extends CI_Controller {
 		$data['table_input'] = $this->CForm->form_input($data['table_field']	,$options);
 
 		// var_dump($data['table_input']);die();
-		$this->load->view('templates/admin/header');
+		$this->load->view('templates/admin/header',['notif'=>$this->notif]);
 		$this->load->view('templates/admin/sidebar');
 		$this->load->view('admin/table/index',$data);
 		$this->load->view('templates/admin/footer',['footer'=>true]);
@@ -148,6 +149,10 @@ class Home extends CI_Controller {
 			'field' => [
 				'id' => [
 					'use' => false
+				],
+				'no_antrian' => [
+					'use' => true,
+					'req' => false
 				]
 			]
 		];
@@ -156,7 +161,7 @@ class Home extends CI_Controller {
 		$data['input'] = $this->CForm->form_input($data_db,$options);
 		$data['id'] = $id;
 		// var_dump($data);die();
-		$this->load->view('templates/admin/header');
+		$this->load->view('templates/admin/header',['notif'=>$this->notif]);
 		$this->load->view('templates/admin/sidebar');
 		$this->load->view('admin/table/tbl_edit',$data);
 		$this->load->view('templates/admin/footer');

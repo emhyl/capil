@@ -20,16 +20,17 @@ class Login extends CI_Controller {
 			$data['password'] = $this->input->post('password');
 
 			$auth = $this->M_capil->getWhere('tbl_login',$data);
-	
 			if($auth){
+			// var_dump($auth->status);die();
 				switch ($auth->status) {
 					case 'admin':
 						$this->session->set_userdata('admin',true);
 						redirect(base_url('admin'));
 				
 						break;
-					case 'dokter':
-						# code...
+					case 'pemohon':
+						$this->session->set_userdata('user',$auth);
+						redirect(base_url(''));
 						break;
 					case 'user':
 						# code...

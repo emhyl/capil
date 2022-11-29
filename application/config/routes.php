@@ -58,3 +58,7 @@ $route['admin/data_master/delete/(:any)'] = 'admin/data_master/home/delete/$1';
 $route['admin/data_master/add'] = 'admin/data_master/home/add';
 $route['admin/data_master/edit/(:any)'] = 'admin/data_master/home/edit/$1';
 $route['admin/data_master/(:any)'] = 'admin/data_master/home/index/$1';
+
+$route['nomor_antrian'] = 'home/nomor_antrian';
+$route['nomor_antrian/(:any)'] = 'home/nomor_antrian/$1';
+$route['tentang'] = 'home/tentang';

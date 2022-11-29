@@ -7,6 +7,23 @@ class Home extends CI_Controller {
 		if(!$this->session->userdata('admin')){
 			redirect(base_url('login'));
 		}
+		// var_dump($this->CForm->time_now(true));
+	
+
+		if($this->CForm->time_now(true) >= 17){
+			$data_antrian = $this->CForm->ascToNum($this->M_capil->getAll('tbl_antrian'),'id');
+			$data_pemohon = $this->CForm->ascToNum($this->M_capil->getAll('tbl_pemohon'),'id');
+			$data_berkas = $this->CForm->ascToNum($this->M_capil->getAllWhere('tbl_berkas',['tgl'=>$this->CForm->time_now()]),'id');
+			foreach ($data_antrian as $value) {
+				$this->M_capil->delete('tbl_antrian',['id'=>$value]);
+			}
+			foreach ($data_berkas as $row_berkas) {
+				$this->M_capil->edit('tbl_berkas',['status'=>'selesai'],['id'=>$row_berkas]);
+			}
+			foreach ($data_pemohon as $row_pemohon) {
+				$this->M_capil->edit('tbl_pemohon',['no_antrian'=>null],['id'=>$row_pemohon]);
+			}
+		}
 	}
 
 	public function index()
@@ -21,10 +38,23 @@ class Home extends CI_Controller {
 		// var_dump($data['riwayat']);
 		// die();
 
-		$this->load->view('templates/admin/header');
+		$this->load->view('templates/admin/header',['notif'=>$data['total_proses']]);
 		$this->load->view('templates/admin/sidebar');
 		$this->load->view('admin/index',$data);
 		$this->load->view('templates/admin/footer');
 	}
+
+
+	public function export() {
+
+		$data['laporan'] = $this->M_capil->join2tbl('*',['tbl_pemohon','tbl_berkas'],['id','id_pemohon'],['status'=>'selesai']);
+
+	    $this->load->library('pdf');
+	    $this->pdf->setPaper('A4', 'potrait');
+	    $this->pdf->filename = 'laporan.pdf';
+	    $this->pdf->load('admin/view_laporan', $data);
+
+	}
+		
 
 }
