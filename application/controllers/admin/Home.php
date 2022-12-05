@@ -27,7 +27,7 @@ class Home extends CI_Controller {
 			}
 		}
 
-		if($this->CForm->time_now(true) >= 8 && $this->CForm->time_now(true) <= 9){
+		if($this->CForm->time_now(true) >= 8 && $this->CForm->time_now(true) <= 16){
 			$data_berkas_riwayat = $this->CForm->ascToNum($this->M_capil->getAllWhere('tbl_berkas',['status'=>'selesai']),'id');
 			foreach ($data_berkas_riwayat as $row_berkas_riwayat) {
 				$this->M_capil->delete('tbl_berkas',['id'=>$row_berkas_riwayat]);
