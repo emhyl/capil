@@ -8,22 +8,34 @@ class Home extends CI_Controller {
 			redirect(base_url('login'));
 		}
 		// var_dump($this->CForm->time_now(true));
-	
-
+		
 		if($this->CForm->time_now(true) >= 17){
+			$data_berkas = $this->CForm->ascToNum($this->M_capil->getAllWhere('tbl_berkas',['tgl'=>$this->CForm->time_now()]),'id');
 			$data_antrian = $this->CForm->ascToNum($this->M_capil->getAll('tbl_antrian'),'id');
 			$data_pemohon = $this->CForm->ascToNum($this->M_capil->getAll('tbl_pemohon'),'id');
-			$data_berkas = $this->CForm->ascToNum($this->M_capil->getAllWhere('tbl_berkas',['tgl'=>$this->CForm->time_now()]),'id');
+
 			foreach ($data_antrian as $value) {
 				$this->M_capil->delete('tbl_antrian',['id'=>$value]);
 			}
+
 			foreach ($data_berkas as $row_berkas) {
 				$this->M_capil->edit('tbl_berkas',['status'=>'selesai'],['id'=>$row_berkas]);
 			}
+
 			foreach ($data_pemohon as $row_pemohon) {
 				$this->M_capil->edit('tbl_pemohon',['no_antrian'=>null],['id'=>$row_pemohon]);
 			}
 		}
+
+		if($this->CForm->time_now(true) >= 8 && $this->CForm->time_now(true) <= 9){
+			$data_berkas_riwayat = $this->CForm->ascToNum($this->M_capil->getAllWhere('tbl_berkas',['status'=>'selesai']),'id');
+			foreach ($data_berkas_riwayat as $row_berkas_riwayat) {
+				$this->M_capil->delete('tbl_berkas',['id'=>$row_berkas_riwayat]);
+			}
+		}
+
+
+
 	}
 
 	public function index()

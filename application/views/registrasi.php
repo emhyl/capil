@@ -7,7 +7,7 @@
         <meta name="description" content="">
         <meta name="author" content="">
 
-        <title>Startmin - Bootstrap Admin Theme</title>
+        <title>Registrasi</title>
 
         <!-- Bootstrap Core CSS -->
         <link href="<?= base_url('assets/admin/') ?>css/bootstrap.min.css" rel="stylesheet">
@@ -35,23 +35,33 @@
                 <div class="col-md-4 col-md-offset-4">
                     <div class="login-panel panel panel-default">
                         <div class="panel-heading">
-                            <h3 class="panel-title text-center">Login</h3>
+                            <h3 class="panel-title text-center">Daftar</h3>
                         </div>
                         <div class="panel-body">
-                            <?= $this->session->flashdata('err_login') ?>
-                            <form role="form" action="<?= base_url('login')?>" method="post">
+                            <?= $this->session->flashdata('err') ?>
+                            <?= $this->session->flashdata('success') ?>
+                            <form role="form" action="<?= base_url('registrasi')?>" method="post">
                                 <fieldset>
                                     <div class="form-group">
-                                        <input class="form-control" placeholder="Username" name="username" type="text" autofocus>
+                                        <input class="form-control" required="" placeholder="Nama" name="nama" type="text" autofocus="">
                                     </div>
                                     <div class="form-group">
-                                        <input class="form-control" placeholder="Password" name="password" type="password" value="">
+                                        <input class="form-control" required="" placeholder="nomor HP" name="no_hp" type="text">
+                                    </div>
+                                    <div class="form-group">
+                                        <input class="form-control" required="" placeholder="Alamat" name="alamat" type="text">
+                                    </div>
+                                    <div class="form-group">
+                                        <input class="form-control" required="" placeholder="Username" name="username" type="text">
+                                    </div>
+                                    <div class="form-group">
+                                        <input class="form-control" required="" placeholder="Password" name="password" type="password" value="">
                                     </div>
                                     <div class="">
-                                        <p>Belum punya akun? <span><a href="<?= base_url('registrasi') ?>">Daftar Disini</a></span></p>
+                                        <p>Sudah punya akun? <span><a href="<?= base_url('login') ?>">Silahkan Login</a></span></p>
                                     </div>
                                     <!-- Change this to a button or input when using this as a form -->
-                                    <button type="submit" name="btn_login" class="btn btn-lg btn-success btn-block">Login</button>
+                                    <button type="submit" name="btn_registarsi" class="btn btn-lg btn-success btn-block">Daftar</button>
                                 </fieldset>
                             </form>
                         </div>

@@ -77,7 +77,7 @@ https://templatemo.com/tm-581-kind-heart-charity
 
     <nav class="navbar navbar-expand-lg bg-light shadow-lg">
         <div class="container">
-            <a class="navbar-brand" href="index.html">
+            <a class="navbar-brand" href="<?= base_url('') ?>">
                 <img src="<?= base_url('assets/user/') ?>images/logo.png" class="logo img-fluid" alt="Kind Heart Charity">
                 <span>
                     Kantor DisdukCapil Bulukmba
@@ -129,32 +129,22 @@ https://templatemo.com/tm-581-kind-heart-charity
                                 <img src="<?= base_url('assets/user/') ?>images/slide/header_1.png"
                                     class="carousel-image img-fluid" alt="...">
 
-                                <div class="carousel-caption d-flex flex-column justify-content-end">
-                                    <h1>CAPIL</h1>
-
-                                    <p>Caile, Kec. Ujung Bulu, </p>
-                                    <p>Kabupaten Bulukumba, Sulawesi Selatan 92518 </p>
-                                </div>
                             </div>
                             <div class="carousel-item">
                                 <img src="<?= base_url('assets/user/') ?>images/slide/header_1.png"
                                     class="carousel-image img-fluid" alt="...">
 
-                                <div class="carousel-caption d-flex flex-column justify-content-end">
-                                    <h1>CAPIL</h1>
-
-                                    <p>F622+M53, Caile, Kec. Ujung Bulu, Kabupaten Bulukumba, Sulawesi Selatan 92518 </p>
-                                </div>
+                                
                             </div>
                             <div class="carousel-item">
                                 <img src="<?= base_url('assets/user/') ?>images/slide/header_1.png"
                                     class="carousel-image img-fluid" alt="...">
 
-                                <div class="carousel-caption d-flex flex-column justify-content-end">
+                            <!--     <div class="carousel-caption d-flex flex-column justify-content-end">
                                     <h1>CAPIL</h1>
 
                                     <p>F622+M53, Caile, Kec. Ujung Bulu, Kabupaten Bulukumba, Sulawesi Selatan 92518 </p>
-                                </div>
+                                </div> -->
                             </div>
 
                            

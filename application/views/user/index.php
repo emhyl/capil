@@ -4,13 +4,27 @@
         <div class="row">
 
             <div class="col-lg-10 col-12 text-center mx-auto">
-                <h2 class="mb-5">Nomor Antrian Anda</h2>
+                <h2 class="mb-5">Nomor Antrian</h2>
             </div>
 
-            <div class="col-12">
-                <div class="featured-block d-flex justify-content-center align-items-center">
+            <div class="col-4 shadow-sm">
+                <div class="featured-block ">
                     <p class="featured-block-text" style="font-size: 100px"><strong><?= $nomor_antrian ?></strong></p>
+                    <p class="featured-block-text"><strong>Nomor Anda</strong></p>
                    
+                </div>
+            </div>
+            <div class="col-4 shadow-sm">
+                <div class="featured-block">
+                    <p class="featured-block-text" style="font-size: 100px"><strong><?= $nomor_antrian ?></strong></p>
+                    <p class="featured-block-text"><strong>Di proses</strong></p>
+                   
+                </div>
+            </div>
+            <div class="col-4 shadow-sm">
+                <div class="featured-block">
+                    <p class="featured-block-text" style="font-size: 100px"><strong><?= $nomor_antrian ?></strong></p>
+                    <p class="featured-block-text"><strong>Total Antrian</strong></p>
                 </div>
             </div>
 

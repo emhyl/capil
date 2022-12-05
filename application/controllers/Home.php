@@ -94,7 +94,7 @@ class Home extends CI_Controller {
 
 		}
 
-		if($this->CForm->time_now(true) >= 8 && $this->CForm->time_now(true) < 12 ){
+		if($this->CForm->time_now(true) >= 8 && $this->CForm->time_now(true) < 10 ){
 			$data['sesi_daftar'] = true;
 		}else{
 			$data['sesi_daftar'] = false;
